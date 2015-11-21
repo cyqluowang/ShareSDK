@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
-  s.name             = 'ShareSDK3'
-  s.version          = "3.1.3"
-  s.summary          = 'ShareSDK is the most comprehensive Social SDK in the world,which share easily with 40+ platforms.'
+  s.name             = 'RRShareSDK'
+  s.version          = "0.0.1"
+  s.summary          = 'ShareSDK自定义版.'
   s.license          = 'MIT'
-  s.author           = { "Jinghuang Liu" => "liujinghuang@icloud.com" }
+  s.author           = { "cyq" => "yq.chen@renrunkeji.com" }
 
-  s.homepage         = 'http://www.mob.com'
-  s.source           = { :git => "https://github.com/ShareSDKPlatform/ShareSDK.git", :tag => s.version.to_s }
+  s.homepage         = 'https://github.com/cyqluowang/ShareSDK'
+  s.source           = { :git => "https://github.com/cyqluowang/ShareSDK.git", :tag => s.version }
   s.platform         = :ios
   s.ios.deployment_target = "6.0"
   s.frameworks       = 'UIKit', 'JavaScriptCore'
@@ -30,14 +30,7 @@ Pod::Spec.new do |s|
 
     # 各个平台的SDK
     s.subspec 'ShareSDKPlatforms' do |sp|
-        sp.default_subspecs = 'GooglePlus', 'QQ', 'SinaWeibo', 'WeChat', 'RenRen'
-    
-        # GooglePlus
-        sp.subspec 'GooglePlus' do |ssp|
-            ssp.vendored_frameworks = 'libraries/extends/GooglePlusSDK/GoogleOpenSource.framework', 'libraries/extends/GooglePlusSDK/GooglePlus.framework'
-            ssp.resource = 'libraries/extends/GooglePlusSDK/GooglePlus.bundle'
-            ssp.frameworks = 'CoreMotion', 'CoreLocation', 'MediaPlayer', 'AssetsLibrary', 'AddressBook'
-        end
+        sp.default_subspecs =  'QQ', 'SinaWeibo', 'WeChat'
 
         # QQ
         sp.subspec 'QQ' do |ssp|
@@ -62,24 +55,6 @@ Pod::Spec.new do |s|
             ssp.source_files = "libraries/extends/WeChatSDK/*.{h,m}"
             ssp.public_header_files = "libraries/extends/WeChatSDK/*.h"
             ssp.libraries = 'sqlite3'
-        end
-
-        # RenRen
-        sp.subspec 'RenRen' do |ssp|
-            ssp.vendored_frameworks = 'libraries/extends/RenRenSDK/RennSDK.framework'
-            ssp.resource = 'libraries/extends/RenRenSDK/RennSDK.bundle'
-        end
-
-        # 支付宝（AliPaySocial）
-        sp.subspec 'AliPaySocial' do |ssp|
-            ssp.vendored_libraries = 'libraries/extends/APSocialSDK/*.a'
-            ssp.source_files = "libraries/extends/APSocialSDK/*.{h,m}"
-            ssp.public_header_files = "libraries/extends/APSocialSDK/*.h"
-        end
-
-        # Kakao
-        sp.subspec 'Kakao' do |ssp|
-            ssp.vendored_frameworks = 'libraries/extends/KaKaoSDK/KakaoOpenSDK.framework'
         end
     end
 end
