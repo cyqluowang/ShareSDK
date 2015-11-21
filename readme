@@ -15,6 +15,7 @@ ShareSDK简洁版文件包含：
    （9）ShareSDKUI.framework：分享菜单栏和分享编辑页面。（如果自定义这些UI可直接移除）
 
 ~~删除线~~
+~~删除线~~
 2、doc（包含Objective-C、swift版集成文档和新功能介绍）
 
 
