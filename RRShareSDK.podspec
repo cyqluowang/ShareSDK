@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RRShareSDK'
-  s.version          = "0.0.2"
+  s.version          = "0.0.3"
   s.summary          = 'ShareSDK自定义版.'
   s.license          = 'MIT'
   s.author           = { "cyq" => "yq.chen@renrunkeji.com" }
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   # 核心模块
     s.subspec 'libraries' do |sp|
-        sp.vendored_frameworks = 'libraries/ShareSDKConnector.framework','libraries/MOBFoundation.framework'
+        sp.vendored_frameworks = 'libraries/ShareSDKConnector.framework','libraries/ShareSDKExtension.framework','libraries/MOBFoundation.framework'
         sp.libraries = 'icucore', 'z', 'stdc++'
         sp.resources = 'libraries/ShareSDK.bundle'
     end
